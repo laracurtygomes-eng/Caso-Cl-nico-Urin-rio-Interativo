@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duplicação ureteral com implantação ureteral heterotópica – Relato de caso interativo</title>
+    <style>
+        /* Estilo limpo, legível e profissional */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Roboto', system-ui, -apple-system, sans-serif;
+            background: #f5f9fc;
+            color: #1e2b3c;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .document-container {
+            max-width: 1000px;
+            width: 100%;
+            background: #ffffff;
+            box-shadow: 0 8px 30px rgba(0, 20, 30, 0.08);
+            border-radius: 28px;
+            padding: 2.8rem 3rem;
+            border: 1px solid #d9e7f0;
+        }
+
+        /* Tipografia do artigo */
+        h1 {
+            font-size: 2.1rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            color: #0a3144;
+            margin-bottom: 0.4rem;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #2a5c7a;
+            margin-bottom: 0.2rem;
+            font-style: italic;
+        }
+
+        .authors {
+            font-size: 1.05rem;
+            color: #3b5e77;
+            margin-bottom: 0.75rem;
+            font-weight: 500;
+        }
+
+        .citation {
+            font-size: 0.95rem;
+            color: #5b7e94;
+            border-bottom: 1px solid #d0e2ed;
+            padding-bottom: 0.75rem;
+            margin-bottom: 1.8rem;
+            font-style: normal;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #0a3f58;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+            border-left: 6px solid #4b8bb4;
+            padding-left: 1rem;
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1e5a78;
+            margin-top: 1.6rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+            text-align: justify;
+            color: #1f3749;
+        }
+
+        ul, ol {
+            margin: 0.5rem 0 1.2rem 1.8rem;
+            font-size: 1.05rem;
+        }
+
+        li {
+            margin-bottom: 0.4rem;
+        }
+
+        strong {
+            font-weight: 600;
+            color: #0b3348;
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        /* Termos interativos – aparência sutil, mas clicável */
+        .term {
+            background-color: #e3f0fa;
+            border-bottom: 2px dotted #2b7aa7;
+            color: #0b3c5a;
+            font-weight: 500;
+            cursor: pointer;
+            border-radius: 4px 4px 0 0;
+            padding: 0 2px 0 1px;
+            transition: background-color 0.15s, border-color 0.15s;
+            display: inline;
+            position: relative;
+            white-space: normal;
+        }
+
+        .term:hover {
+            background-color: #cbe4f5;
+            border-bottom-color: #0a4b6e;
+        }
+
+        .term.active {
+            background-color: #b8d9f0;
+            border-bottom: 2px solid #0a4b6e;
+        }
+
+        /* Caixa de definição – aparece logo abaixo do termo */
+        .definition-box {
+            display: block;
+            background: #f0f7fe;
+            border-left: 5px solid #2a7aa8;
+            border-radius: 0 12px 12px 12px;
+            padding: 0.8rem 1.2rem;
+            margin: 0.35rem 0 0.8rem 0;
+            font-size: 0.98rem;
+            color: #123d55;
+            box-shadow: 0 2px 8px rgba(0, 40, 70, 0.08);
+            line-height: 1.5;
+            width: 100%;
+            transition: opacity 0.15s ease;
+        }
+
+        .definition-box strong {
+            color: #0b405e;
+        }
+
+        /* Para preservar a lista e outros blocos */
+        .figure-caption {
+            font-size: 0.95rem;
+            color: #3e6178;
+            margin: 0.5rem 0 0.5rem 0;
+            font-style: italic;
+        }
+
+        /* Botão para recolher tudo? não necessário, mas mantém a simplicidade */
+        .footnote-note {
+            font-size: 0.9rem;
+            color: #4e6f86;
+            background: #ecf3f8;
+            border-radius: 12px;
+            padding: 0.8rem 1.2rem;
+            margin-top: 2rem;
+            border: 1px solid #c9ddec;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #d0e0eb;
+            margin: 1.8rem 0;
+        }
+
+        /* Garantir que as tabelas não existem, mas se houver */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        /* Responsividade */
+        @media (max-width: 700px) {
+            .document-container {
+                padding: 1.8rem 1.2rem;
+            }
+            h1 {
+                font-size: 1.7rem;
+            }
+            p, li {
+                font-size: 1rem;
+            }
+            .definition-box {
+                font-size: 0.92rem;
+                padding: 0.7rem 1rem;
+            }
+        }
+
+        /* Evitar que o clique em termos dentro de links ou negrito quebre */
+        .term * {
+            pointer-events: none; /* garante que apenas o span .term receba o clique */
+        }
+
+        /* definição oculta por padrão? Não – usamos display none, e JS alterna */
+        .definition-box {
+            display: none;
+        }
+
+        .definition-box.show {
+            display: block;
+        }
+
+        /* Pequeno ajuste para não quebrar o fluxo */
+        .term-wrapper {
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+<div class="document-container" id="docContainer">
+
+    <!-- TÍTULO E AUTORES - preservados integralmente -->
+    <h1>Duplicação ureteral com implantação ureteral heterotópica: uma causa menos comum de incontinência urinária em adultos</h1>
+    <div class="subtitle">Rita Rodrigues Fonseca, Ana Covita, Renato Lains Mota</div>
+    <div class="citation">BMJ Case Reports 2021;14:e239572. DOI: 10.1136/bcr-2020-239572</div>
+
+    <!-- RESUMO -->
+    <h2>RESUMO</h2>
+    <p>
+        Uma mulher de 25 anos, com histórico de infecções frequentes do trato urinário e 
+        <span class="term" data-term="incontinencia">incontinência urinária</span> por gotejamento desde a primeira infância, foi encaminhada à nossa clínica de urologia. Uma investigação cuidadosa revelou 
+        <span class="term" data-term="duplicacao">duplicação ureteral</span> direita completa, com 
+        <span class="term" data-term="displasia">segmento renal displásico</span> do polo superior e 
+        <span class="term" data-term="ureter ectopico">ureter direito ectópico</span> drenando para a vagina. A paciente foi submetida à exploração cirúrgica, que confirmou o diagnóstico. Também foi possível observar uma comunicação entre os segmentos renais, o que permitiu a 
+        <span class="term" data-term="ligadura laparoscopica">ligadura laparoscópica</span> e a excisão do ureter direito heterotópico. A paciente apresentou boa recuperação, com resolução completa de suas queixas e grande melhora de sua qualidade de vida.
+    </p>
+
+    <!-- CONTEXTO -->
+    <h2>CONTEXTO</h2>
+    <p>
+        A duplicação ureteral é a anomalia congênita mais comum do trato urinário superior.¹ Em alguns casos, pode apresentar-se com 
+        <span class="term" data-term="ureterocele">ureteroceles</span>² e/ou 
+        <span class="term" data-term="ureter ectopico">ureteres ectópicos</span>, que geralmente se inserem na uretra proximal e, menos frequentemente, na vagina (em mulheres).³ As manifestações clínicas podem incluir infecções do trato urinário ou incontinência urinária, dependendo da posição do ureter ectópico. Tipicamente, os pacientes são diagnosticados em idade jovem.
+    </p>
+    <p>
+        Este relato descreve um caso de duplicação ureteral direita completa, com segmento renal displásico do polo superior e ureter direito ectópico drenando para a vagina em uma mulher adulta. Além de ser pouco frequentemente diagnosticado na idade adulta, nosso caso destaca a importância de uma investigação cuidadosa de manifestações clínicas frequentes, como incontinência urinária e infecções do trato urinário, a fim de prevenir morbidade significativa.
+    </p>
+
+    <!-- APRESENTAÇÃO DO CASO -->
+    <h2>APRESENTAÇÃO DO CASO</h2>
+    <p>
+        Uma mulher de 25 anos, com histórico de infecções frequentes do trato urinário e incontinência urinária por gotejamento desde a primeira infância, foi encaminhada à nossa clínica de urologia. Ela negava outros sintomas. No início da adolescência, havia sido investigada pelos mesmos sintomas e diagnosticada com rim direito duplicado, sem dilatação ureteral, e um 
+        <span class="term" data-term="cisto ovariano">cisto ovariano</span> direito de 3 cm de diâmetro. Na ocasião, seu 
+        <span class="term" data-term="renograma">renograma</span> mostrou discreta assimetria da função renal e uma 
+        <span class="term" data-term="cistoscopia">cistoscopia</span> revelou apenas 
+        <span class="term" data-term="trigonite">trigonite</span>. A paciente perdeu o acompanhamento por mais de 10 anos e foi recentemente encaminhada à nossa clínica devido à persistência de suas queixas.
+    </p>
+
+    <!-- INVESTIGAÇÕES -->
+    <h2>INVESTIGAÇÕES</h2>
+    <p>
+        Os exames de sangue revelaram valores normais de 
+        <span class="term" data-term="ureia">ureia</span> e 
+        <span class="term" data-term="creatinina">creatinina</span>.
+    </p>
+    <p>
+        Uma 
+        <span class="term" data-term="tomografia">tomografia computadorizada</span> dos rins confirmou a duplicidade ureteral direita, com dilatação do segmento renal do polo superior aparentemente causada por uma estrutura cilíndrica hiperdensa desconhecida próxima ao ovário direito (figura 1). A 
+        <span class="term" data-term="ressonancia">ressonância magnética</span> pélvica subsequente mostrou um cisto de 23 × 21 × 14 mm próximo à parede direita da vagina, com um trajeto fistuloso para a vagina, sugestivo de ureter ectópico (figuras 2–3).
+    </p>
+
+    <!-- TRATAMENTO -->
+    <h2>TRATAMENTO</h2>
+    <p>
+        A paciente foi submetida à exploração cirúrgica. O ureter vaginal ectópico não foi visualizado durante a cistoscopia. O ureter ortotópico foi cateterizado e realizou-se uma 
+        <span class="term" data-term="pielografia">pielografia retrógrada</span> (figura 4), mostrando opacificação regular do segmento renal do polo inferior e discreta opacificação do segmento renal do polo superior, sugerindo uma comunicação persistente entre os polos.
+    </p>
+    <p>
+        Em seguida, optou-se por abordagem laparoscópica, com identificação da porção proximal dos dois ureteres direitos (figura 5). Entretanto, não foi possível localizar a inserção vaginal do ureter ectópico (figuras 6–7). Como a pielografia intraoperatória mostrou comunicação persistente entre os polos superior e inferior, realizou-se então a ligadura do ureter direito heterotópico, proximal e distalmente na cavidade pélvica, permitindo a preservação renal (figuras 8–9).
+    </p>
+
+    <!-- DESFECHO E ACOMPANHAMENTO -->
+    <h2>DESFECHO E ACOMPANHAMENTO</h2>
+    <p>
+        A paciente recebeu alta no segundo dia após a cirurgia. Ao final de 2 anos de acompanhamento, não apresentou episódios de infecção do trato urinário nem queixas de incontinência urinária, com grande melhora de sua qualidade de vida.
+    </p>
+
+    <!-- DISCUSSÃO -->
+    <h2>DISCUSSÃO</h2>
+    <p>
+        A incontinência urinária é uma condição comum, afetando até 50% das mulheres. Entretanto, em cerca de 25% dos casos ela permanece sem diagnóstico, pois as pacientes sentem vergonha de relatar suas queixas.⁴ No diagnóstico, é importante estabelecer o tipo de incontinência urinária, sua gravidade e sua etiologia. Menos frequentemente, as pacientes apresentam perda contínua de urina, o que deve levar o médico a investigar causas menos comuns, como a presença de uma 
+        <span class="term" data-term="fistula urinaria">fístula urinária</span> ou de um ureter ectópico.
+    </p>
+    <p>
+        A duplicação ureteral é uma anomalia anatômica comum do sistema urinário, com incidência relatada de até 4% da população, afetando com maior frequência pacientes do sexo feminino. Pode ser assintomática ou apresentar uma variedade de sinais e sintomas associados, como 
+        <span class="term" data-term="refluxo vesicoureteral">refluxo vesicoureteral</span>, incontinência urinária e infecções do trato urinário.
+    </p>
+    <p>
+        Ao lidar com casos de duplicação ureteral completa, o médico deve estar ciente de que, em meninas, o ureter ectópico pode inserir-se em estruturas originadas do canal urogenital e dos componentes do ducto paramesonéfrico. Essa inserção atípica pode levar a um tipo menos frequente de incontinência urinária, isto é, perda contínua de urina.⁵
+    </p>
+    <p>
+        Atualmente, a maioria dos pacientes é diagnosticada no período antenatal ou na infância,⁶ geralmente por ultrassonografia. Diversas outras modalidades de imagem também podem ser úteis, como a 
+        <span class="term" data-term="uretrocistografia">uretrocistografia miccional</span> para detectar refluxo vesicoureteral ou a 
+        <span class="term" data-term="cintilografia">cintilografia cortical renal</span> com ácido dimercaptossuccínico para avaliar a função renal. A 
+        <span class="term" data-term="urografia">urografia por tomografia computadorizada</span> e por ressonância magnética também fornece informações anatômicas importantes.
+    </p>
+    <p>
+        Assim, poucos casos são diagnosticados na idade adulta. Entretanto, diante de um quadro clínico envolvendo infecções recorrentes do trato urinário e incontinência urinária por gotejamento, o urologista deve ser capaz de identificar uma causa embriológica tão simples quanto uma duplicação ureteral completa com ureter ectópico.
+    </p>
+    <p>
+        O tratamento de rins duplicados com ureteres ectópicos é cirúrgico, geralmente por 
+        <span class="term" data-term="reimplante ureteral">reimplante ureteral</span>, 
+        <span class="term" data-term="anastomose ureteral">anastomose ureteral</span> ou 
+        <span class="term" data-term="heminefrectomia">heminefrectomia</span> do segmento renal correspondente. Neste caso, como não foi possível visualizar a inserção vaginal do ureter ectópico e os dois segmentos renais comunicavam-se entre si, a ligadura do ureter ectópico foi suficiente. A preservação da função renal foi obtida por meio do ureter ortotópico.
+    </p>
+    <p>
+        A redução dos episódios de infecção do trato urinário é de importância fundamental para prevenir morbidade futura. O médico também deve estar atento às queixas de incontinência urinária, que podem afetar profundamente a vida das pacientes.
+    </p>
+
+    <!-- PERSPECTIVA DA PACIENTE -->
+    <h2>PERSPECTIVA DA PACIENTE</h2>
+    <p>
+        Por muitos anos, pensei que nunca teria meu problema de saúde resolvido e cheguei até a considerar desistir de procurar orientação médica. Os episódios repetidos de infecção do trato urinário realmente me incomodavam e tiveram impacto negativo na minha rotina diária. Entretanto, esta cirurgia mudou radicalmente minha vida, apesar do período pós-operatório doloroso. Agora me sinto 100% feliz e saudável, confortável e alegre. Sou extremamente grata à equipe médica pela eficiência, profissionalismo e cuidado comigo.
+    </p>
+
+    <!-- PONTOS DE APRENDIZAGEM -->
+    <h2>PONTOS DE APRENDIZAGEM</h2>
+    <ul>
+        <li>Perda urinária contínua associada a histórico de infecções repetidas do trato urinário deve levar a um exame cuidadoso e detalhado da paciente.</li>
+        <li>Anomalias anatômicas, como duplicações ureterais, geralmente são diagnosticadas precocemente na vida; entretanto, diante de uma paciente mais velha com essas queixas, elas devem ser descartadas.</li>
+        <li>O tratamento cirúrgico é de importância fundamental para prevenir morbidade futura.</li>
+        <li>Compreender a embriologia do sistema urinário e suas consequências clínicas pode afetar profundamente o manejo de uma paciente.</li>
+    </ul>
+
+    <!-- LEGENDAS DAS FIGURAS -->
+    <h2>LEGENDAS DAS FIGURAS</h2>
+    <p class="figure-caption">Figura 1. Imagem de TC demonstrando uma estrutura cilíndrica hiperdensa (círculo vermelho) próxima ao ovário direito.</p>
+    <p class="figure-caption">Figura 2. Imagem de RM pélvica (plano axial) com um cisto de 23 × 21 × 14 mm (círculo vermelho) próximo à parede direita da vagina, com drenagem fistulosa para a vagina.</p>
+    <p class="figure-caption">Figura 3. Imagem de RM pélvica (plano coronal) com um cisto de 23 × 21 × 14 mm próximo à parede direita da vagina, com drenagem fistulosa para a vagina.</p>
+    <p class="figure-caption">Figura 4. Imagem radiográfica intraoperatória mostrando uma comunicação entre os segmentos renais dos polos superior e inferior.</p>
+    <p class="figure-caption">Figura 5. Imagem intraoperatória mostrando duplicação ureteral direita.</p>
+    <p class="figure-caption">Figura 6. Imagem intraoperatória mostrando duplicação ureteral direita (distalmente).</p>
+    <p class="figure-caption">Figura 7. Imagem intraoperatória mostrando duplicação ureteral direita (proximalmente).</p>
+    <p class="figure-caption">Figura 8. Imagem intraoperatória mostrando ligadura ureteral proximal com clipes Hem-o-lok.</p>
+    <p class="figure-caption">Figura 9. Imagem intraoperatória mostrando ligadura ureteral distal com clipes Hem-o-lok.</p>
+
+    <!-- CONTRIBUIÇÕES, FINANCIAMENTO E DECLARAÇÕES -->
+    <h2>CONTRIBUIÇÕES, FINANCIAMENTO E DECLARAÇÕES</h2>
+    <p><strong>Contribuições:</strong> RRF: coleta e análise de dados e redação. RLM: coleta e análise de imagens e revisão do texto. AC: revisão do texto.</p>
+    <p><strong>Financiamento:</strong> os autores não declararam financiamento específico para esta pesquisa por qualquer agência de financiamento dos setores público, comercial ou sem fins lucrativos.</p>
+    <p><strong>Conflitos de interesse:</strong> nenhum declarado.</p>
+    <p><strong>Consentimento da paciente para publicação:</strong> obtido.</p>
+    <p><strong>Proveniência e revisão por pares:</strong> não encomendado; revisado externamente por pares.</p>
+
+    <!-- REFERÊNCIAS -->
+    <h2>REFERÊNCIAS</h2>
+    <ol>
+        <li>Limura A, Yi S-Q, Terayama H, et al. Duplicação ureteral completa associada a megaureter e dilatação da junção ureteropélvica: relato de um caso em cadáver adulto com breve revisão da literatura. Ann Anat 2006;188:371–5.</li>
+        <li>Moores D, Cohen R, Hayden L. Excisão laparoscópica de rim pélvico com ureter ectópico vaginal único. J Pediatr Surg 1997;32:634–5.</li>
+        <li>Jain KA. Inserção vaginal ectópica de ureter duplicado obstruído em mulher adulta: demonstração por ressonância magnética. Clin Imaging 2007;31:54–6.</li>
+        <li>Lukacz ES, Santiago-Lastra Y, Albo ME, et al. Incontinência urinária em mulheres: uma revisão. JAMA 2017;318:1592–604.</li>
+        <li>Didier RA, Chow JS, Kwatra NS, et al. O sistema coletor duplicado do trato urinário: embriologia, aspectos de imagem e considerações clínicas. Pediatr Radiol 2017;47:1526–38.</li>
+        <li>Castagnetti M, El-Ghoneimi A. Manejo de ureteroceles em sistemas duplicados em neonatos e lactentes. Nat Rev Urol 2009;6:307–15.</li>
+    </ol>
+
+    <!-- INFORMAÇÕES EDITORIAIS DA PÁGINA FINAL -->
+    <h2>INFORMAÇÕES EDITORIAIS DA PÁGINA FINAL</h2>
+    <p>Copyright 2021 BMJ Publishing Group. Todos os direitos reservados. Para obter permissão para reutilizar qualquer parte deste conteúdo, consulte a página de direitos e licenciamento da BMJ. Membros do BMJ Case Reports podem reutilizar este artigo para uso pessoal e ensino sem necessidade de permissão adicional. Torne-se membro do BMJ Case Reports e você poderá: enviar quantos casos desejar; usufruir de revisão por pares rápida e receptiva e publicação ágil dos artigos aceitos; acessar todos os artigos publicados; e reutilizar qualquer material publicado para uso pessoal e ensino sem permissão adicional. Atendimento ao cliente: para dúvidas adicionais sobre sua assinatura, entre em contato com a equipe de atendimento ao cliente pelo telefone +44 (0) 20 7111 1105 ou pelo e-mail support@bmj.com. Visite casereports.bmj.com para encontrar mais artigos como este e tornar-se membro.</p>
+    <p class="footnote-note">Nota: Tradução integral para português brasileiro preparada a partir do artigo original fornecido pelo usuário. Os nomes dos autores, dados bibliográficos e DOI foram preservados.</p>
+
+    <hr>
+    <p style="font-size:0.9rem; color:#4e6f86; text-align:center;">Documento interativo – clique nos termos destacados para ver definições.</p>
+</div>
+
+<script>
+    (function() {
+        // Definições para cada termo (data-term -> texto explicativo)
+        const definitions = {
+            "incontinencia": "Perda involuntária de urina. No contexto, refere-se à perda contínua por gotejamento, sintoma de ureter ectópico.",
+            "duplicacao": "Anomalia congênita em que o sistema coletor renal (pelve e ureter) está duplicado total ou parcialmente. No caso, duplicação ureteral direita completa.",
+            "displasia": "Desenvolvimento anormal de tecido ou órgão. Aqui, 'segmento renal displásico' indica que o polo superior do rim duplicado tem estrutura e função anormais.",
+            "ureter ectopico": "Ureter que se implanta em local anômalo, fora da bexiga. No caso, drena para a vagina, causando perda contínua de urina.",
+            "ligadura laparoscopica": "Procedimento cirúrgico minimamente invasivo no qual se fecha (amarra) um vaso ou ducto, neste caso o ureter ectópico, por meio de pequenas incisões e visualização por câmera.",
+            "ureterocele": "Dilatação cística da porção terminal do ureter na bexiga, frequentemente associada a duplicação ureteral.",
+            "cisto ovariano": "Formação líquida benigna no ovário, geralmente assintomática. Achado incidental no caso.",
+            "renograma": "Exame de medicina nuclear que avalia a função renal e a excreção de radiotraçador, permitindo comparar a função entre os rins.",
+            "cistoscopia": "Endoscopia da bexiga e uretra, usada para inspecionar a mucosa e detectar anomalias, como orifícios ureterais ectópicos.",
+            "trigonite": "Inflamação do trígono vesical (área triangular na base da bexiga). Achado inespecífico à cistoscopia.",
+            "ureia": "Produto final do metabolismo proteico, dosado no sangue para avaliar a função renal.",
+            "creatinina": "Substância produzida pelos músculos e excretada pelos rins; sua dosagem sérica é marcador da função renal.",
+            "tomografia": "Tomografia computadorizada (TC), exame de imagem que utiliza raios-X para gerar cortes detalhados do corpo.",
+            "ressonancia": "Ressonância magnética (RM), exame de imagem que usa campo magnético e ondas de radiofrequência para visualizar tecidos moles.",
+            "pielografia": "Exame radiológico contrastado que visualiza a pelve renal e o ureter. 'Pielografia retrógrada' é feita pela injeção de contraste através do ureter.",
+            "fistula urinaria": "Comunicação anormal entre o trato urinário e outra estrutura (ex.: vagina), causando perda contínua de urina.",
+            "refluxo vesicoureteral": "Fluxo retrógrado de urina da bexiga para o ureter e rim, predispondo a infecções e dano renal.",
+            "uretrocistografia": "Exame de imagem com contraste que avalia a bexiga e a uretra durante a micção, útil para detectar refluxo.",
+            "cintilografia": "Exame de medicina nuclear que utiliza radiofármacos para avaliar função e anatomia de órgãos. 'Cintilografia cortical renal' avalia o córtex renal.",
+            "urografia": "Exame de imagem contrastado do trato urinário, podendo ser por TC (urografia por TC) ou RM.",
+            "reimplante ureteral": "Cirurgia que reposiciona o ureter na bexiga, corrigindo refluxo ou obstrução.",
+            "anastomose ureteral": "Conexão cirúrgica entre dois segmentos de ureter ou entre ureter e outra estrutura.",
+            "heminefrectomia": "Remoção cirúrgica de parte do rim (polo superior ou inferior), preservando o restante do órgão."
+        };
+
+        // Mapear termos que podem ter o mesmo data-term, garantindo que cada .term seja tratado individualmente.
+        // Iremos criar a caixa de definição dinamicamente e alternar visibilidade.
+        const terms = document.querySelectorAll('.term');
+
+        terms.forEach(term => {
+            // Criar um container para a definição logo após o termo
+            const defBox = document.createElement('span');
+            defBox.className = 'definition-box';
+            const termKey = term.dataset.term;
+            const definitionText = definitions[termKey] || 'Definição não disponível.';
+            defBox.innerHTML = `<strong>${term.textContent.trim()}:</strong> ${definitionText}`;
+            
+            // Inserir depois do termo
+            term.insertAdjacentElement('afterend', defBox);
+
+            // Adicionar evento de clique
+            term.addEventListener('click', function(e) {
+                e.stopPropagation();  // Evita que cliques aninhados disparem algo indesejado
+                // Alterna a classe 'show' na caixa de definição irmã
+                const siblingBox = this.nextElementSibling;
+                if (siblingBox && siblingBox.classList.contains('definition-box')) {
+                    siblingBox.classList.toggle('show');
+                }
+                // Opcional: destacar o termo ativo
+                this.classList.toggle('active');
+            });
+        });
+
+        // Fechar todas as definições se clicar fora de um termo (comportamento opcional)
+        document.addEventListener('click', function(e) {
+            if (!e.target.classList.contains('term')) {
+                // Não fecha automaticamente para não atrapalhar a leitura; mantemos as caixas abertas.
+                // Mas se quiser que feche ao clicar fora, descomente a linha abaixo:
+                // document.querySelectorAll('.definition-box.show').forEach(box => box.classList.remove('show'));
+                // document.querySelectorAll('.term.active').forEach(t => t.classList.remove('active'));
+            }
+        });
+
+        // Garantir que a página funcione offline – não há dependências externas.
+        console.log('Documento interativo carregado. Termos médicos ativados.');
+    })();
+</script>
+</body>
+</html>
